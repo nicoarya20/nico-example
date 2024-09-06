@@ -44,6 +44,7 @@ export default function Home() {
           <Title size={54}>Jelajahi cerita lengkapnya.</Title>
         </Box>
         <Space h={200} />
+        
         <Container miw={890}>
           <Stack maw={890} gap={100}>
             <Title size={64}>Tiga lompatan besar.</Title>
