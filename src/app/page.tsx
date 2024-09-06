@@ -1,101 +1,113 @@
-import Image from "next/image";
+'use client'
+import { Box, Button, Center, Container, Flex, Image, SimpleGrid, Space, Stack, Title } from "@mantine/core";
+import { CustomHeader } from "./_ui/CustomHeader";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  const fontSize = "3.5rem";
+  return (
+    <Stack gap={"lg"}>
+      <CustomHeader />
+      <Container>
+        <Stack justify="center" align="center">
+          <Title>MacBook Pro</Title>
+          <Title size={fontSize}>
+            Begitu mengesankan.
+          </Title>
+          <Title size={fontSize}>
+            Mencuri perhatian.
+          </Title>
+        </Stack>
+      </Container>
+      <Box h={400} bg={"gray"}>
+        <Image h={400} w={"100%"} src={"https://www.apple.com/v/macbook-pro/ak/images/overview/welcome/welcome_hero_endframe__66ipqm3o5gyu_large_2x.jpg"} alt="" />
+      </Box>
+      <Center>
+        <Button radius={50}>Beli</Button>
+      </Center>
+      <Space h={100} />
+      <Container miw={890}>
+        <Stack>
+          <Flex align={"center"} justify={"space-between"}>
+            <Title>Keunggulan demi keunggulan.</Title>
+            <Flex>
+              <Button variant="transparent" component={Link} href={"/"}>Tonton acara</Button>
+            </Flex>
+          </Flex>
+          <Image radius={30} src={'/assets/ngopi.png'} alt="" />
+        </Stack>
+      </Container>
+      <Space h={200} />
+      <Stack bg={"black"} py={100}>
+        <Box px={50}>
+          <Title size={54}>Jelajahi cerita lengkapnya.</Title>
+        </Box>
+        <Space h={200} />
+        <Container miw={890}>
+          <Stack maw={890} gap={100}>
+            <Title size={64}>Tiga lompatan besar.</Title>
+            <Space h={60} />
+            <Title order={3}>
+              MacBook Pro melesat berkat chip M3, M3 Pro, dan M3 Max. Dirancang dengan teknologi 3 nanometer dan dilengkapi arsitektur GPU yang sepenuhnya baru, ini adalah chip tercanggih yang pernah dibuat untuk komputer pribadi. Dan masing-masing menghadirkan performa dan kemampuan yang lebih profesional
+            </Title>
+            <SimpleGrid cols={3} spacing={50}>
+              <Stack p={"md"}>
+                <Image src={"https://www.apple.com/v/macbook-pro/ak/images/overview/themes/performance/mx__7nkrkdxhdzma_large_2x.jpg"} alt="" />
+                <Stack gap={50}>
+                  <Title>
+                    CPU
+                    8-core
+                  </Title>
+                  <Title>
+                    CPU
+                    8-core
+                  </Title>
+                  <Title>
+                    CPU
+                    8-core
+                  </Title>
+                </Stack>
+              </Stack>
+              <Stack p={"md"}>
+                <Image src={"https://www.apple.com/v/macbook-pro/ak/images/overview/themes/performance/mx__7nkrkdxhdzma_large_2x.jpg"} alt="" />
+                <Stack gap={50}>
+                  <Title>
+                    CPU
+                    8-core
+                  </Title>
+                  <Title>
+                    CPU
+                    8-core
+                  </Title>
+                  <Title>
+                    CPU
+                    8-core
+                  </Title>
+                </Stack>
+              </Stack>
+              <Stack p={"md"}>
+                <Image src={"https://www.apple.com/v/macbook-pro/ak/images/overview/themes/performance/mx__7nkrkdxhdzma_large_2x.jpg"} alt="" />
+                <Stack gap={50}>
+                  <Title>
+                    CPU
+                    8-core
+                  </Title>
+                  <Title>
+                    CPU
+                    8-core
+                  </Title>
+                  <Title>
+                    CPU
+                    8-core
+                  </Title>
+                </Stack>
+              </Stack>
+
+            </SimpleGrid>
+          </Stack>
+        </Container>
+      </Stack>
+    </Stack>
   );
 }
